@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upment — практичні онлайн-курси</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231e3c72'/%3E%3Ctext x='50' y='68' font-size='40' text-anchor='middle' fill='white'%3EUp%3C/text%3E%3C/svg%3E">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:system-ui,sans-serif;background:#fff;color:#111827;line-height:1.5}
+        .container{max-width:1200px;margin:0 auto;padding:0 24px}
+        .header{padding:20px 0;border-bottom:1px solid #e5e7eb;background:rgba(255,255,255,0.95);position:sticky;top:0;z-index:10}
+        .header-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+        .logo h1{font-size:1.8rem;font-weight:700;background:linear-gradient(135deg,#1e3c72,#2a5298);-webkit-background-clip:text;background-clip:text;color:transparent}
+        .logo p{font-size:.85rem;color:#4b5563}
+        .nav-links{display:flex;gap:24px;flex-wrap:wrap;align-items:center}
+        .nav-links a{text-decoration:none;color:#374151;font-weight:500}
+        .nav-links a:hover{color:#2563eb}
+        .btn{display:inline-block;padding:12px 28px;border-radius:40px;font-weight:600;text-decoration:none;transition:.2s;font-size:1rem}
+        .btn-primary{background:#1e3c72;color:#fff}
+        .btn-primary:hover{background:#0f2b4f;transform:translateY(-2px)}
+        .btn-outline{background:transparent;border:1.5px solid #1e3c72;color:#1e3c72}
+        .btn-outline:hover{background:#f0f4ff}
+        .btn-telegram{background:#0088cc;color:#fff}
+        .btn-telegram:hover{background:#006699}
+        .btn-small{padding:8px 20px;font-size:.9rem}
+        .hero{padding:70px 0 60px;text-align:center;background:linear-gradient(145deg,#f9fafc,#fff)}
+        .hero h1{font-size:3rem;font-weight:800;margin-bottom:20px}
+        .hero p{font-size:1.3rem;color:#4b5563;max-width:700px;margin:0 auto 32px}
+        .hero-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+        .section{padding:70px 0;border-bottom:1px solid #eef2f6}
+        .section-title{font-size:2rem;font-weight:700;text-align:center;margin-bottom:48px}
+        .categories-grid{display:flex;flex-wrap:wrap;gap:16px;justify-content:center}
+        .category-card{background:#f3f4f6;padding:12px 24px;border-radius:100px;font-weight:500;text-decoration:none;color:#1f2937}
+        .category-card:hover{background:#e0e7ff;transform:scale(1.02)}
+        .courses-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:32px;margin-top:20px}
+        .course-card{background:#fff;border-radius:24px;box-shadow:0 8px 20px rgba(0,0,0,.05);padding:24px;border:1px solid #eef2f6;transition:.25s}
+        .course-card:hover{transform:translateY(-6px);box-shadow:0 20px 30px -12px rgba(0,0,0,.1)}
+        .course-title{font-size:1.4rem;font-weight:700;margin-bottom:12px}
+        .course-desc{color:#4b5563;margin-bottom:16px;font-size:.95rem}
+        .course-price{font-size:1.6rem;font-weight:800;color:#1e3c72;margin:16px 0}
+        .course-price small{font-size:.9rem;font-weight:400;color:#6b7280}
+        .steps-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:30px;text-align:center}
+        .step{flex:1;min-width:180px;background:#f9fafb;padding:24px 16px;border-radius:24px}
+        .step-number{background:#1e3c72;width:48px;height:48px;display:flex;align-items:center;justify-content:center;border-radius:60px;color:#fff;font-weight:700;font-size:1.4rem;margin:0 auto 16px}
+        .benefits-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:30px;text-align:center}
+        .category-block{margin-bottom:48px}
+        .category-title{font-size:1.8rem;font-weight:700;margin-bottom:24px;padding-bottom:12px;border-bottom:3px solid #1e3c72;display:inline-block}
+        .courses-mini-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px;margin-top:20px}
+        .mini-course-card{background:#f9fafb;border-radius:20px;padding:20px;border:1px solid #eef2f6}
+        .mini-course-card:hover{background:#fff;box-shadow:0 4px 12px rgba(0,0,0,.08)}
+        .mini-course-title{font-weight:700;font-size:1.1rem;margin-bottom:8px}
+        .mini-course-price{font-weight:700;color:#1e3c72;margin:12px 0}
+        .course-hero{background:linear-gradient(135deg,#1e3c72,#2a5298);color:#fff;padding:60px 0}
+        .course-hero h1{font-size:2.5rem;margin-bottom:16px}
+        .course-badge{background:rgba(255,255,255,.2);display:inline-block;padding:6px 16px;border-radius:60px;font-size:.85rem;margin-bottom:20px}
+        .info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px;margin:40px 0}
+        .info-card{background:#f9fafb;padding:24px;border-radius:20px}
+        .module-list{list-style:none}
+        .module-list li{padding:12px 0;border-bottom:1px solid #eef2f6}
+        .telegram-box{text-align:center;background:#eef2ff;padding:40px;border-radius:32px;margin:40px 0}
+        .footer{background:#111827;color:#e5e7eb;padding:48px 0 32px}
+        .footer a{color:#9ca3af;text-decoration:none}
+        .footer a:hover{color:#fff}
+        .footer-links{display:flex;gap:30px;justify-content:center;flex-wrap:wrap;margin-bottom:24px}
+        @media(max-width:768px){.hero h1{font-size:2rem}.hero p{font-size:1rem}.section-title{font-size:1.7rem}.header-inner{flex-direction:column}.course-hero h1{font-size:1.8rem}}
+    </style>
+</head>
+<body>
+<header class="header">
+    <div class="container header-inner">
+        <div class="logo"><h1>Upment</h1><p>практичні онлайн-курси</p></div>
+        <div class="nav-links">
+            <a href="#hits">Хіти</a><a href="#catalog">Каталог</a><a href="#how-it-works">Як купити</a><a href="#contacts">Контакти</a>
+            <a href="https://t.me/cryptoflowoffice" class="btn btn-telegram btn-small" target="_blank">💬 Telegram</a>
+        </div>
+    </div>
+</header>
+<main>
+    <section class="hero">
+        <div class="container">
+            <h1>Практичні онлайн-курси,<br>які дають реальні навички та результат</h1>
+            <p>Digital, AI, програмування, Telegram та бізнес — без води, тільки практика</p>
+            <div class="hero-buttons">
+                <a href="#catalog" class="btn btn-primary">🎯 Обрати курс</a>
+                <a href="https://t.me/cryptoflowoffice" class="btn btn-telegram" target="_blank">💬 Написати в Telegram</a>
+            </div>
+        </div>
+    </section>
+    <section id="hits" class="section">
+        <div class="container">
+            <h2 class="section-title">⭐ Хіти продажів</h2>
+            <div class="courses-grid">
+                <div class="course-card"><div class="course-title">📊 SMM з нуля</div><div class="course-desc">Навчись вести Instagram, створювати контент і знаходити клієнтів</div><div class="course-price">399 ₴ <small>/ повний доступ</small></div><a href="https://t.me/cryptoflowoffice" class="btn btn-outline" style="width:100%;text-align:center" target="_blank">Отримати доступ →</a></div>
+                <div class="course-card"><div class="course-title">🤖 ChatGPT для роботи</div><div class="course-desc">Автоматизація, контент, аналітика — AI, який реально допомагає</div><div class="course-price">299 ₴ <small>/ повний доступ</small></div><a href="https://t.me/cryptoflowoffice" class="btn btn-outline" style="width:100%;text-align:center" target="_blank">Отримати доступ →</a></div>
+                <div class="course-card"><div class="course-title">📱 Telegram-бот з нуля</div><div class="course-desc">Створюй ботів без коду або з Python — для бізнесу та заробітку</div><div class="course-price">999 ₴ <small>/ повний доступ</small></div><a href="https://t.me/cryptoflowoffice" class="btn btn-outline" style="width:100%;text-align:center" target="_blank">Отримати доступ →</a></div>
+                <div class="course-card"><div class="course-title">💼 Фриланс з нуля</div><div class="course-desc">Як знайти перших клієнтів, продавати послуги та виходити на стабільний дохід</div><div class="course-price">699 ₴ <small>/ повний доступ</small></div><a href="https://t.me/cryptoflowoffice" class="btn btn-outline" style="width:100%;text-align:center" target="_blank">Отримати доступ →</a></div>
+                <div class="course-card"><div class="course-title">💻 Python з нуля</div><div class="course-desc">Перші кроки в програмуванні: синтаксис, практика, перші проєкти</div><div class="course-price">799 ₴ <small>/ повний доступ</small></div><a href="https://t.me/cryptoflowoffice" class="btn btn-outline" style="width:100%;text-align:center" target="_blank">Отримати доступ →</a></div>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">📂 Категорії курсів</h2>
+            <div class="categories-grid">
+                <a href="#cat-marketing" class="category-card">📊 Digital Marketing</a>
+                <a href="#cat-ai" class="category-card">🤖 AI & Automation</a>
+                <a href="#cat-programming" class="category-card">💻 Programming</a>
+                <a href="#cat-telegram" class="category-card">📱 Telegram / Mini Apps</a>
+                <a href="#cat-design" class="category-card">🎨 Design</a>
+                <a href="#cat-business" class="category-card">💼 Business / Freelance</a>
+            </div>
+        </div>
+    </section>
+    <section id="catalog" class="section" style="background:#fefefe">
+        <div class="container">
+            <h2 class="section-title">📚 Повний каталог курсів</h2>
+            <div id="cat-marketing" class="category-block"><h3 class="category-title">📊 Digital Marketing</h3><div class="courses-mini-grid"><div class="mini-course-card"><div class="mini-course-title">SMM з нуля</div><div class="mini-course-price">399 грн</div><a href="https://t.me/cryptoflowoffice" target="_blank">→ Отримати доступ</a></div><div class="mini-course-card"><div class="mini-course-title">Контент-маркетинг</div><div class="mini-course-price">499 грн</div><a href="https://t.me/cryptoflowoffice" target="_blank">→ Отримати доступ</a></div><div class="mini-course-card"><div class="mini-course-title">Таргет Meta Ads</div><div class="mini-course-price">1499 грн</div><a href="https://t.me/cryptoflowoffice" target="_blank">→ Отримати доступ</a></div><div class="mini-course-card"><div class="mini-course-title">Просунута реклама</div><div class="mini-course-price">2199 грн</div><a href="https://t.me/cryptoflowoffice" target="_blank">→ Отримати доступ</a></div><div class="mini-course-card"><div class="mini-course-title">Маркетинг для бізнесу</div><div class="mini-course-price">2999 грн</div><a href="https://t.me/cryptoflowoffice" target="_blank">→ Отримати доступ</a></div></div></div>
+            <div id="cat-ai" class="category-block"><h3 class="category-title">🤖 AI & AUTOMATION</h3><div class="courses-mini-grid"><div class="mini-course-card"><div class="mini-course-title">ChatGPT для роботи</div><div class="mini-course-price">299 грн</div><a href="https://t.me/cryptoflowoffice" target="_blank">→ Отримати доступ</a></div><div class="mini-course-card"><div class="mini-course-title">AI для фрилансу</div><div class="mini-course-price">699 грн</div><a href="https://t.me/cryptoflowoffice" target="_blank">→ Отримати доступ</a></div><div class="mini-course-card"><div class="mini-course-title">No-code + AI автоматизація</div><div class="mini-course-price">1499 грн</div><a href="https://t.me/cryptoflowoffice" target="_blank">→ Отримати доступ</a></div><div class="mini-course-card"><div class="mini-course-title">AI для бізнесу</div><div class="mini-course-price">2499 грн</div><a href="https://t.me/cryptoflowoffice" target="_blank">→ Отримати доступ</a></div></div></div>
+            <div id="cat-programming" class="category-block"><h3 class="category-title">💻 PROGRAMMING</h3><div class="courses-mini-grid"><div class="mini-course-card"><div class="mini-course-title">Python з нуля</div><div class="mini-course-price">799 грн</div><a href="https://t.me/cryptoflowoffice" target="_blank">→ Отримати доступ</a></div><div class="mini-course-card"><div class="mini-course-title">JavaScript база</div><div class="mini-course-price">899 грн</div><a href="https://t.me/cryptoflowoffice" target="_blank">→ Отримати доступ</a></div><div class="mini-course-card"><div class="mini-course-title">Node.js backend</div><div class="mini-course-price">1999 грн</div><a href="https://t.me/cryptoflowoffice" target="_blank">→ Отримати доступ</a></div><div class="mini-course-card"><div class="mini-course-title">Практичні проєкти</div><div class="mini-course-price">2999 грн</div><a href="https://t.me/cryptoflowoffice" target="_blank">→ Отримати доступ</a></div></div></div>
+            <div id="cat-telegram" class="category-block"><h3 class="category-title">📱 TELEGRAM / MINI APPS</h3><div class="courses-mini-grid"><div class="mini-course-card"><div class="mini-course-title">Telegram-бот з нуля</div><div class="mini-course-price">999 грн</div><a href="https://t.me/cryptoflowoffice" target="_blank">→ Отримати доступ</a></div><div class="mini-course-card"><div class="mini-course-title">Продажі через Telegram</div><div class="mini-course-price">599 грн</div><a href="https://t.me/cryptoflowoffice" target="_blank">→ Отримати доступ</a></div><div class="mini-course-card"><div class="mini-course-title">Mini App з нуля</div><div class="mini-course-price">2499 грн</div><a href="https://t.me/cryptoflowoffice" target="_blank">→ Отримати доступ</a></div><div class="mini-course-card"><div class="mini-course-title">Автоматизація бізнесу</div><div class="mini-course-price">2999 грн</div><a href="https://t.me/cryptoflowoffice" target="_blank">→ Отримати доступ</a></div></div></div>
+            <div id="cat-design" class="category-block"><h3 class="category-title">🎨 DESIGN</h3><div class="courses-mini-grid"><div class="mini-course-card"><div class="mini-course-title">Figma з нуля</div><div class="mini-course-price">399 грн</div><a href="https://t.me/cryptoflowoffice" target="_blank">→ Отримати доступ</a></div><div class="mini-course-card"><div class="mini-course-title">UI/UX основи</div><div class="mini-course-price">999 грн</div><a href="https://t.me/cryptoflowoffice" target="_blank">→ Отримати доступ</a></div><div class="mini-course-card"><div class="mini-course-title">Дизайн мобільних додатків</div><div class="mini-course-price">1499 грн</div><a href="https://t.me/cryptoflowoffice" target="_blank">→ Отримати доступ</a></div><div class="mini-course-card"><div class="mini-course-title">Практичний дизайн</div><div class="mini-course-price">1999 грн</div><a href="https://t.me/cryptoflowoffice" target="_blank">→ Отримати доступ</a></div></div></div>
+            <div id="cat-business" class="category-block"><h3 class="category-title">💼 BUSINESS / FREELANCE</h3><div class="courses-mini-grid"><div class="mini-course-card"><div class="mini-course-title">Як знайти клієнтів</div><div class="mini-course-price">299 грн</div><a href="https://t.me/cryptoflowoffice" target="_blank">→ Отримати доступ</a></div><div class="mini-course-card"><div class="mini-course-title">Фриланс з нуля</div><div class="mini-course-price">699 грн</div><a href="https://t.me/cryptoflowoffice" target="_blank">→ Отримати доступ</a></div><div class="mini-course-card"><div class="mini-course-title">Продаж послуг</div><div class="mini-course-price">999 грн</div><a href="https://t.me/cryptoflowoffice" target="_blank">→ Отримати доступ</a></div><div class="mini-course-card"><div class="mini-course-title">Мікробізнес</div><div class="mini-course-price">1999 грн</div><a href="https://t.me/cryptoflowoffice" target="_blank">→ Отримати доступ</a></div><div class="mini-course-card"><div class="mini-course-title">Масштабування</div><div class="mini-course-price">2999 грн</div><a href="https://t.me/cryptoflowoffice" target="_blank">→ Отримати доступ</a></div></div></div>
+        </div>
+    </section>
+    <section id="how-it-works" class="section">
+        <div class="container">
+            <h2 class="section-title">🚀 Як це працює</h2>
+            <div class="steps-grid">
+                <div class="step"><div class="step-number">1</div><h3>Обираєш курс</h3><p>Будь-який курс з каталогу</p></div>
+                <div class="step"><div class="step-number">2</div><h3>Пишеш в Telegram</h3><p>Наш менеджер відповідає</p></div>
+                <div class="step"><div class="step-number">3</div><h3>Оплачуєш</h3><p>Безпечна оплата на карту</p></div>
+                <div class="step"><div class="step-number">4</div><h3>Отримуєш доступ</h3><p>Відео + матеріали + підтримка</p></div>
+            </div>
+        </div>
+    </section>
+    <section class="course-hero"><div class="container"><div class="course-badge">⭐ Хіт продажів</div><h1>📊 SMM з нуля</h1><p style="font-size:1.2rem;max-width:700px">Навчись вести Instagram, створювати контент і знаходити клієнтів за 3 тижні</p><div style="margin-top:24px"><span style="font-size:2rem;font-weight:700">399 ₴</span> <span style="opacity:0.8">/ повний доступ назавжди</span></div><a href="https://t.me/cryptoflowoffice" class="btn btn-telegram" style="margin-top:28px;display:inline-block" target="_blank">🎯 Отримати доступ →</a></div></section>
+    <div class="container"><div class="info-grid"><div class="info-card"><h3>📌 Що ти отримаєш</h3><ul style="margin-top:12px;list-style:none"><li>✓ Як вести Instagram</li><li>✓ Як робити контент</li><li>✓ Як знаходити клієнтів</li><li>✓ Як заробляти на SMM</li></ul></div><div class="info-card"><h3>🎯 Для кого курс</h3><ul style="margin-top:12px;list-style:none"><li>✓ Новачки в SMM</li><li>✓ Фрилансери</li><li>✓ Бізнес</li><li>✓ Хто хоче заробляти онлайн</li></ul></div></div><div class="info-card" style="margin-bottom:30px"><h3>📖 Програма курсу</h3><ul class="module-list"><li><strong>Модуль 1:</strong> Основи SMM — стратегія, ніша, аудиторія</li><li><strong>Модуль 2:</strong> Контент-план: Reels, Stories, пости</li><li><strong>Модуль 3:</strong> Оформлення профілю, шапка, візуал</li><li><strong>Модуль 4:</strong> Таргетована реклама (база)</li><li><strong>Модуль 5:</strong> Як знайти перших клієнтів і продавати</li></ul></div><div class="telegram-box"><h3>💬 Формат навчання</h3><p>📹 Відеоуроки + 🧠 практичні завдання + 💬 підтримка в Telegram</p><p>✅ Доступ одразу після оплати</p><a href="https://t.me/cryptoflowoffice" class="btn btn-primary" style="margin-top:16px" target="_blank">Поставити запитання / Купити</a></div></div>
+    <section id="contacts" class="section"><div class="container"><h2 class="section-title">💬 Контакти та підтримка</h2><div style="text-align:center;max-width:500px;margin:0 auto"><p style="margin-bottom:16px"><strong>📱 Telegram:</strong> <a href="https://t.me/cryptoflowoffice" target="_blank">@cryptoflowoffice</a></p><p style="margin-bottom:16px"><strong>✉️ Email:</strong> <a href="mailto:hello@upment.com">hello@upment.com</a></p><p style="margin-bottom:24px">💬 Відповідаємо з 9:00 до 21:00</p><a href="https://t.me/cryptoflowoffice" class="btn btn-telegram" target="_blank">Написати в Telegram</a></div></div></section>
+</main>
+<footer class="footer"><div class="container"><div class="footer-links"><a href="#">Головна</a><a href="#catalog">Каталог курсів</a><a href="https://t.me/cryptoflowoffice" target="_blank">Telegram</a><a href="#">Політика конфіденційності</a><a href="#">Умови використання</a></div><p style="text-align:center;color:#6b7280">© 2025 Upment — практичні онлайн-курси</p></div></footer>
+</body>
+</html>
