@@ -7,33 +7,48 @@
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231e3c72'/%3E%3Ctext x='50' y='68' font-size='40' text-anchor='middle' fill='white'%3EUp%3C/text%3E%3C/svg%3E">
     <style>
         *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:system-ui,sans-serif;background:#fff;color:#111827;line-height:1.5}
+        body{font-family:system-ui,sans-serif;background:#0a0a0a;color:#ffffff;line-height:1.5}
         .container{max-width:1200px;margin:0 auto;padding:0 24px}
-        .header{padding:20px 0;border-bottom:1px solid #e5e7eb;background:rgba(255,255,255,0.95);position:sticky;top:0;z-index:10}
+        .header{padding:20px 0;border-bottom:1px solid #1a1a1a;background:rgba(10,10,10,0.95);position:sticky;top:0;z-index:10}
         .header-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
-        .logo h1{font-size:1.8rem;font-weight:700;background:linear-gradient(135deg,#1e3c72,#2a5298);-webkit-background-clip:text;background-clip:text;color:transparent}
-        .logo p{font-size:.85rem;color:#4b5563}
+        .logo h1{font-size:1.8rem;font-weight:700;background:linear-gradient(135deg,#00d4aa,#00b892);-webkit-background-clip:text;background-clip:text;color:transparent}
+        .logo p{font-size:.85rem;color:#6b7280}
         .nav-links{display:flex;gap:24px;flex-wrap:wrap;align-items:center}
-        .nav-links a{text-decoration:none;color:#374151;font-weight:500}
-        .nav-links a:hover{color:#2563eb}
-        .btn{display:inline-block;padding:12px 28px;border-radius:40px;font-weight:600;text-decoration:none;transition:.2s;font-size:1rem;cursor:pointer}
-        .btn-primary{background:#1e3c72;color:#fff}
-        .btn-primary:hover{background:#0f2b4f;transform:translateY(-2px)}
+        .nav-links a{text-decoration:none;color:#9ca3af;font-weight:500}
+        .nav-links a:hover{color:#00d4aa}
+        .btn{display:inline-block;padding:12px 28px;border-radius:40px;font-weight:600;text-decoration:none;transition:.2s;font-size:1rem;cursor:pointer;border:none}
+        .btn-primary{background:#00d4aa;color:#0a0a0a;font-weight:700;box-shadow:0 8px 25px rgba(0,212,170,0.3)}
+        .btn-primary:hover{background:#00b892;transform:translateY(-2px)}
+        .btn-outline{background:transparent;border:1.5px solid #00d4aa;color:#00d4aa}
+        .btn-outline:hover{background:rgba(0,212,170,0.1);transform:translateY(-2px)}
         .btn-telegram{background:#0088cc;color:#fff}
-        .btn-telegram:hover{background:#006699}
-        .course-hero{background:linear-gradient(135deg,#1e3c72,#2a5298);color:#fff;padding:60px 0}
+        .btn-telegram:hover{background:#006699;transform:translateY(-2px)}
+        .course-hero{background:linear-gradient(135deg,#0a0a0a,#1a1a1a);color:#fff;padding:60px 0;border-bottom:1px solid #1a1a1a}
         .course-hero h1{font-size:2.5rem;margin-bottom:16px}
-        .course-badge{background:rgba(255,255,255,.2);display:inline-block;padding:6px 16px;border-radius:60px;font-size:.85rem;margin-bottom:20px}
+        .course-badge{background:rgba(0,212,170,0.2);color:#00d4aa;display:inline-block;padding:6px 16px;border-radius:60px;font-size:.85rem;margin-bottom:20px}
         .info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px;margin:40px 0}
-        .info-card{background:#f9fafb;padding:24px;border-radius:20px}
+        .info-card{background:rgba(255,255,255,0.05);padding:24px;border-radius:20px;border:1px solid rgba(255,255,255,0.08)}
+        .info-card h3{color:#fff;margin-bottom:12px}
+        .info-card ul{list-style:none;color:#9ca3af}
+        .info-card li{padding:4px 0}
         .module-list{list-style:none}
-        .module-list li{padding:12px 0;border-bottom:1px solid #eef2f6}
-        .telegram-box{text-align:center;background:#eef2ff;padding:40px;border-radius:32px;margin:40px 0}
-        .footer{background:#111827;color:#e5e7eb;padding:48px 0 32px;margin-top:40px}
-        .footer a{color:#9ca3af;text-decoration:none}
-        .footer a:hover{color:#fff}
+        .module-list li{padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.05);color:#9ca3af}
+        .module-list li strong{color:#fff}
+        .telegram-box{text-align:center;background:rgba(0,212,170,0.05);padding:40px;border-radius:32px;margin:40px 0;border:1px solid rgba(0,212,170,0.2)}
+        .telegram-box h3{color:#fff}
+        .telegram-box p{color:#9ca3af}
+        .footer{background:#050505;color:#6b7280;padding:48px 0 32px;border-top:1px solid #1a1a1a}
+        .footer a{color:#6b7280;text-decoration:none}
+        .footer a:hover{color:#00d4aa}
         .footer-links{display:flex;gap:30px;justify-content:center;flex-wrap:wrap;margin-bottom:24px}
-        @media(max-width:768px){.course-hero h1{font-size:1.8rem}}
+        .form-box{background:rgba(255,255,255,0.05);padding:32px;border-radius:24px;border:1px solid rgba(255,255,255,0.08);max-width:500px;margin:0 auto}
+        .form-box input{width:100%;padding:14px;margin:8px 0 16px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.1);border-radius:12px;color:#fff;font-size:1rem}
+        .form-box input::placeholder{color:#6b7280}
+        .form-box input:focus{outline:2px solid #00d4aa;border-color:transparent}
+        .form-box label{color:#9ca3af;font-weight:500}
+        .form-box .btn{width:100%}
+        .success-message{display:none;background:rgba(0,212,170,0.15);color:#00d4aa;padding:16px;border-radius:12px;margin-top:16px;text-align:center;border:1px solid rgba(0,212,170,0.2)}
+        @media(max-width:768px){.header-inner{flex-direction:column}.course-hero h1{font-size:1.8rem}}
     </style>
 </head>
 <body>
@@ -52,46 +67,53 @@
     <div class="container">
         <div class="course-badge">⭐ Хіт продажів</div>
         <h1>📊 SMM з нуля</h1>
-        <p style="font-size:1.2rem;max-width:700px">Навчись вести Instagram, створювати контент і знаходити клієнтів за 3 тижні</p>
-        <div style="margin-top:24px"><span style="font-size:2rem;font-weight:700">399 ₴</span> <span style="opacity:0.8">/ повний доступ назавжди</span></div>
+        <p style="font-size:1.2rem;max-width:700px;color:#9ca3af">Навчись вести Instagram, створювати контент і знаходити клієнтів за 3 тижні</p>
+        <div style="margin-top:24px"><span style="font-size:2rem;font-weight:700;color:#00d4aa">399 ₴</span> <span style="color:#6b7280">/ повний доступ назавжди</span></div>
         <a href="https://t.me/cryptoflowoffice" class="btn btn-telegram" style="margin-top:28px;display:inline-block" target="_blank">🎯 Отримати доступ →</a>
     </div>
 </section>
 
 <div class="container">
     <div class="info-grid">
-        <div class="info-card"><h3>📌 Що ти отримаєш</h3><ul style="margin-top:12px;list-style:none"><li>✓ Як вести Instagram</li><li>✓ Як робити контент</li><li>✓ Як знаходити клієнтів</li><li>✓ Як заробляти на SMM</li></ul></div>
-        <div class="info-card"><h3>🎯 Для кого курс</h3><ul style="margin-top:12px;list-style:none"><li>✓ Новачки в SMM</li><li>✓ Фрилансери</li><li>✓ Бізнес</li><li>✓ Хто хоче заробляти онлайн</li></ul></div>
+        <div class="info-card"><h3>📌 Що ти отримаєш</h3><ul><li>✓ Як вести Instagram</li><li>✓ Як робити контент</li><li>✓ Як знаходити клієнтів</li><li>✓ Як заробляти на SMM</li></ul></div>
+        <div class="info-card"><h3>🎯 Для кого курс</h3><ul><li>✓ Новачки в SMM</li><li>✓ Фрилансери</li><li>✓ Бізнес</li><li>✓ Хто хоче заробляти онлайн</li></ul></div>
     </div>
 
-    <div class="info-card" style="margin-bottom:30px">
-        <h3>📖 Програма курсу</h3>
-        <ul class="module-list">
-            <li><strong>Модуль 1:</strong> Основи SMM — стратегія, ніша, аудиторія</li>
-            <li><strong>Модуль 2:</strong> Контент-план: Reels, Stories, пости</li>
-            <li><strong>Модуль 3:</strong> Оформлення профілю, шапка, візуал</li>
-            <li><strong>Модуль 4:</strong> Таргетована реклама (база)</li>
-            <li><strong>Модуль 5:</strong> Як знайти перших клієнтів і продавати</li>
-        </ul>
+    <div class="info-card" style="margin-bottom:30px"><h3>📖 Програма курсу</h3><ul class="module-list"><li><strong>Модуль 1:</strong> Основи SMM — стратегія, ніша, аудиторія</li><li><strong>Модуль 2:</strong> Контент-план: Reels, Stories, пости</li><li><strong>Модуль 3:</strong> Оформлення профілю, шапка, візуал</li><li><strong>Модуль 4:</strong> Таргетована реклама (база)</li><li><strong>Модуль 5:</strong> Як знайти перших клієнтів і продавати</li></ul></div>
+
+    <!-- Форма заявки -->
+    <div class="form-box">
+        <h3 style="color:#fff;text-align:center;margin-bottom:12px">📩 Залишити заявку</h3>
+        <p style="text-align:center;color:#9ca3af;margin-bottom:24px">Заповніть форму, і ми зв'яжемося з вами протягом 15 хвилин.</p>
+        <form action="https://formsubmit.co/bformanchuk@gmail.com" method="POST">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_subject" value="Нова заявка з сайту Upment">
+            <label>Ваше ім'я</label>
+            <input type="text" name="Ім'я" placeholder="Наприклад: Олексій" required>
+            <label>Номер телефону</label>
+            <input type="tel" name="Телефон" placeholder="Наприклад: +380 XX XXX XX XX" required>
+            <button type="submit" class="btn btn-primary">📨 Відправити заявку</button>
+        </form>
+        <div class="success-message">✅ Дякуємо! Заявку відправлено. Ми зв'яжемося з вами найближчим часом.</div>
+        <p style="text-align:center;margin-top:16px;font-size:0.85rem;color:#6b7280">Або напишіть нам у Telegram: <a href="https://t.me/cryptoflowoffice" style="color:#00d4aa">@cryptoflowoffice</a></p>
     </div>
 
-    <div class="telegram-box">
-        <h3>💬 Формат навчання</h3>
-        <p>📹 Відеоуроки + 🧠 практичні завдання + 💬 підтримка в Telegram</p>
-        <p>✅ Доступ одразу після оплати</p>
-        <a href="https://t.me/cryptoflowoffice" class="btn btn-primary" style="margin-top:16px" target="_blank">Поставити запитання / Купити</a>
-    </div>
+    <div class="telegram-box"><h3>💬 Формат навчання</h3><p>📹 Відеоуроки + 🧠 практичні завдання + 💬 підтримка в Telegram</p><p style="color:#00d4aa">✅ Доступ одразу після оплати</p><a href="https://t.me/cryptoflowoffice" class="btn btn-primary" style="margin-top:16px" target="_blank">Поставити запитання / Купити</a></div>
 </div>
 
 <footer class="footer">
     <div class="container">
-        <div class="footer-links">
-            <a href="index.html">Головна</a>
-            <a href="index.html#catalog">Каталог курсів</a>
-            <a href="https://t.me/upment_academy" target="_blank">Telegram</a>
-        </div>
+        <div class="footer-links"><a href="index.html">Головна</a><a href="index.html#catalog">Каталог курсів</a><a href="https://t.me/upment_academy" target="_blank">Telegram</a></div>
         <p style="text-align:center;color:#6b7280">© 2025 Upment — практичні онлайн-курси</p>
     </div>
 </footer>
+
+<script>
+    document.querySelector('.form-box form').addEventListener('submit', function(e) {
+        setTimeout(function() {
+            document.querySelector('.success-message').style.display = 'block';
+        }, 500);
+    });
+</script>
 </body>
 </html>
