@@ -56,4 +56,64 @@
     <div class="container header-inner">
         <div class="logo"><h1>Upment</h1><p>практичні онлайн-курси</p></div>
         <div class="nav-links">
-            <a href="index
+            <a href="index.html">Головна</a>
+            <a href="index.html#catalog">Каталог</a>
+            <a href="https://t.me/upment_academy" target="_blank">Telegram</a>
+        </div>
+    </div>
+</header>
+
+<section class="course-hero">
+    <div class="container">
+        <div class="course-badge">⭐ Популярний курс</div>
+        <h1>💻 Python з нуля</h1>
+        <p style="font-size:1.2rem;max-width:700px;color:#9ca3af">Перші кроки в програмуванні: синтаксис, практика, перші проєкти</p>
+        <div style="margin-top:24px"><span style="font-size:2rem;font-weight:700;color:#00d4aa">799 ₴</span> <span style="color:#6b7280">/ повний доступ назавжди</span></div>
+        <a href="https://t.me/cryptoflowoffice" class="btn btn-telegram" style="margin-top:28px;display:inline-block" target="_blank">🎯 Отримати доступ →</a>
+    </div>
+</section>
+
+<div class="container">
+    <div class="info-grid">
+        <div class="info-card"><h3>📌 Що ти отримаєш</h3><ul><li>✓ Основи Python за 2 тижні</li><li>✓ 10+ практичних завдань</li><li>✓ Перші проєкти в коді</li><li>✓ Підготовка до фрилансу</li></ul></div>
+        <div class="info-card"><h3>🎯 Для кого курс</h3><ul><li>✓ Новачки без досвіду</li><li>✓ Хто хоче змінити професію</li><li>✓ Фрилансери</li><li>✓ Підприємці для автоматизації</li></ul></div>
+    </div>
+
+    <div class="info-card" style="margin-bottom:30px"><h3>📖 Програма курсу</h3><ul class="module-list"><li><strong>Модуль 1:</strong> Встановлення, перший код за 10 хвилин</li><li><strong>Модуль 2:</strong> Змінні, типи даних, умови, цикли</li><li><strong>Модуль 3:</strong> Функції, робота з файлами</li><li><strong>Модуль 4:</strong> Перший проєкт: калькулятор або парсер</li><li><strong>Модуль 5:</strong> Що далі? Напрямки для заробітку</li></ul></div>
+
+    <!-- Форма заявки -->
+    <div class="form-box">
+        <h3 style="color:#fff;text-align:center;margin-bottom:12px">📩 Залишити заявку</h3>
+        <p style="text-align:center;color:#9ca3af;margin-bottom:24px">Заповніть форму, і ми зв'яжемося з вами протягом 15 хвилин.</p>
+        <form action="https://formsubmit.co/bformanchuk@gmail.com" method="POST">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_subject" value="Нова заявка з сайту Upment">
+            <label>Ваше ім'я</label>
+            <input type="text" name="Ім'я" placeholder="Наприклад: Олексій" required>
+            <label>Номер телефону</label>
+            <input type="tel" name="Телефон" placeholder="Наприклад: +380 XX XXX XX XX" required>
+            <button type="submit" class="btn btn-primary">📨 Відправити заявку</button>
+        </form>
+        <div class="success-message">✅ Дякуємо! Заявку відправлено. Ми зв'яжемося з вами найближчим часом.</div>
+        <p style="text-align:center;margin-top:16px;font-size:0.85rem;color:#6b7280">Або напишіть нам у Telegram: <a href="https://t.me/cryptoflowoffice" style="color:#00d4aa">@cryptoflowoffice</a></p>
+    </div>
+
+    <div class="telegram-box"><h3>💬 Формат навчання</h3><p>📹 Відеоуроки + 🧠 код приклади + 💬 підтримка в Telegram</p><p style="color:#00d4aa">✅ Доступ одразу після оплати</p><a href="https://t.me/cryptoflowoffice" class="btn btn-primary" style="margin-top:16px" target="_blank">Поставити запитання / Купити</a></div>
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-links"><a href="index.html">Головна</a><a href="index.html#catalog">Каталог курсів</a><a href="https://t.me/upment_academy" target="_blank">Telegram</a></div>
+        <p style="text-align:center;color:#6b7280">© 2025 Upment — практичні онлайн-курси</p>
+    </div>
+</footer>
+
+<script>
+    document.querySelector('.form-box form').addEventListener('submit', function(e) {
+        setTimeout(function() {
+            document.querySelector('.success-message').style.display = 'block';
+        }, 500);
+    });
+</script>
+</body>
+</html>
