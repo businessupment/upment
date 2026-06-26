@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Статті — Upment</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231e3c72'/%3E%3Ctext x='50' y='68' font-size='40' text-anchor='middle' fill='white'%3EUp%3C/text%3E%3C/svg%3E">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:system-ui,sans-serif;background:#0a0a0a;color:#ffffff;line-height:1.5}
+        .container{max-width:1200px;margin:0 auto;padding:0 24px}
+        .header{padding:20px 0;border-bottom:1px solid #1a1a1a;background:rgba(10,10,10,0.95);position:sticky;top:0;z-index:1000}
+        .header-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+        .logo h1{font-size:1.8rem;font-weight:700;background:linear-gradient(135deg,#00d4aa,#00b892);-webkit-background-clip:text;background-clip:text;color:transparent}
+        .logo p{font-size:.85rem;color:#6b7280}
+        .nav-links a{text-decoration:none;color:#9ca3af;margin:0 12px;font-weight:500}
+        .nav-links a:hover{color:#00d4aa}
+        .btn{display:inline-block;padding:12px 28px;border-radius:40px;font-weight:600;text-decoration:none;transition:.2s}
+        .btn-outline{background:transparent;border:1.5px solid #00d4aa;color:#00d4aa}
+        .btn-outline:hover{background:rgba(0,212,170,0.1);transform:translateY(-2px)}
+        .btn-telegram{background:#0088cc;color:#fff}
+        .btn-telegram:hover{background:#006699;transform:translateY(-2px)}
+        .section-title{font-size:2rem;font-weight:700;text-align:center;margin-bottom:48px;color:#fff}
+        .blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:32px;margin:40px 0}
+        .blog-card{background:rgba(255,255,255,0.05);border-radius:24px;padding:24px;border:1px solid rgba(255,255,255,0.08);transition:.25s}
+        .blog-card:hover{transform:translateY(-6px);background:rgba(255,255,255,0.08)}
+        .blog-card h3{color:#fff;font-size:1.2rem;margin-bottom:12px}
+        .blog-card p{color:#9ca3af;font-size:.95rem;margin-bottom:16px}
+        .footer{background:#050505;color:#6b7280;padding:40px 0;text-align:center}
+        .footer a{color:#6b7280;text-decoration:none}
+        .footer a:hover{color:#00d4aa}
+        @media(max-width:768px){.header-inner{flex-direction:column}.section-title{font-size:1.7rem}}
+    </style>
+</head>
+<body>
+<header class="header">
+    <div class="container header-inner">
+        <div class="logo"><h1>Upment</h1><p>практичні онлайн-курси</p></div>
+        <div class="nav-links">
+            <a href="/">Головна</a>
+            <a href="/#catalog">Каталог</a>
+            <a href="/#how-it-works">Як купити</a>
+            <a href="blog.html">Статті</a>
+            <a href="/#contacts">Контакти</a>
+            <a href="https://t.me/cryptoflowoffice" class="btn btn-telegram btn-small" target="_blank">💬 Telegram</a>
+        </div>
+    </div>
+</header>
+
+<main>
+    <div class="container" style="padding:60px 0;">
+        <h1 class="section-title">📚 Усі <span style="color:#00d4aa;">статті</span></h1>
+        <div class="blog-grid">
+            <!-- СТАТТЯ 1: SMM -->
+            <div class="blog-card">
+                <h3>📊 Як почати заробляти на SMM з нуля</h3>
+                <p>Покроковий гід для новачків: як визначити нішу, створити контент і знайти перших клієнтів.</p>
+                <a href="smm-stattya.html" class="btn btn-outline" style="width:100%;text-align:center;">Читати →</a>
+            </div>
+
+            <!-- СТАТТЯ 2: ChatGPT -->
+            <div class="blog-card">
+                <h3>🤖 Як ChatGPT допомагає заробляти на фрилансі</h3>
+                <p>5 способів використання штучного інтелекту для збільшення доходу та економії часу.</p>
+                <a href="chatgpt-frilans.html" class="btn btn-outline" style="width:100%;text-align:center;">Читати →</a>
+            </div>
+
+            <!-- СТАТТЯ 3: Python -->
+            <div class="blog-card">
+                <h3>💻 Python для початківців: з чого почати</h3>
+                <p>Покроковий план для тих, хто хоче освоїти Python і зробити перші кроки в програмуванні.</p>
+                <a href="python-pochatok.html" class="btn btn-outline" style="width:100%;text-align:center;">Читати →</a>
+            </div>
+
+            <!-- СТАТТЯ 4: Фриланс -->
+            <div class="blog-card">
+                <h3>💼 Фриланс з нуля: перші кроки</h3>
+                <p>5 простих кроків, які допоможуть почати заробляти без досвіду та клієнтів.</p>
+                <a href="freelance-pershi-kroky.html" class="btn btn-outline" style="width:100%;text-align:center;">Читати →</a>
+            </div>
+
+            <!-- СТАТТЯ 5: Design -->
+            <div class="blog-card">
+                <h3>🎨 Дизайн для початківців: з чого почати</h3>
+                <p>Покроковий план для старту в дизайні: Figma, Photoshop, UI/UX, портфоліо та перші замовлення.</p>
+                <a href="design-pershi-kroky.html" class="btn btn-outline" style="width:100%;text-align:center;">Читати →</a>
+            </div>
+
+            <!-- СТАТТЯ 6: Вибір курсу -->
+            <div class="blog-card">
+                <h3>🎯 Як вибрати курс для старту в IT</h3>
+                <p>5 критеріїв, які допоможуть не помилитися та обрати курс, що дійсно дасть результат.</p>
+                <a href="vybir-kursu-it.html" class="btn btn-outline" style="width:100%;text-align:center;">Читати →</a>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <p>© 2025 Upment — практичні онлайн-курси</p>
+    </div>
+</footer>
+</body>
+</html>
